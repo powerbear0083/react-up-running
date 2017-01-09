@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+      ReactDOM.render(
+        React.DOM.h1(
+          {
+            id: 'my-heading',
+          }, 
+            React.DOM.span(null,  // null 參數是物件，可以給元件任何特性，可使用原生的 JS 方式
+              React.DOM.em(
+                {
+                  className: 'my-em'
+                }, 'Hell'), 'o'),
+            ' World!'
+        ),
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>

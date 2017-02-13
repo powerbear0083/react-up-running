@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom component</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="parent">
+      <button id="ok">OK</button>
+      <button id="cancel">Cancel</button>
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+      (function(){
+        // 事件委派 or 事件委託 event delegation
+        document.getElementById('parent').addEventListener('click', function(e){
+          var btn = e.target;
+
+          switch (btn.id) {
+            case 'ok':
+              console.log('OK');
+              break;
+            case 'cancel':
+              console.log('Cancel');
+              break;
+            default:
+              new Error('Unexpected button ID');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

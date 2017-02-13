@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom component</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <div id="app2"></div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+      var MyComponent = React.createClass({
+        render: function() {
+          return React.DOM.span(null, "I'm so custom");
+        }
+      });
+
+      var MyComponentFactory = React.createFactory(MyComponent);
+
+      ReactDOM.render(
+        // React.createElement(MyComponent),
+        // document.getElementById('app'),
+        React.createElement('div', null, 'Hello World'),
+        document.getElementById('app2')
+      );
+    </script>
+  </body>
+</html>
